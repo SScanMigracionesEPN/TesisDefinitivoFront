@@ -1,1 +1,55 @@
-<p>hola!</p>
+<!-- <div *ngIf="isLoggedIn$ | async as isLoggedIn"> -->
+<div class="nav-flex">
+
+
+    <mat-toolbar color="primary" class="nav-flex">
+
+
+        <div class="targeting-icon">
+
+            <div>
+                <button mat-icon-button (click)="onToggleSidenav()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+
+            <div>
+                <span> <mat-icon>eco</mat-icon>Targeting</span>
+            </div>
+
+
+        </div>
+
+
+        <div>
+            <div class="tool-bar">
+
+                <ul class="navigation-items">
+                    <li>
+                        <a mat-button routerLink="inicio">Inicio</a>
+                    </li>
+                    <li>
+                        <a mat-button routerLink="actores">Actores</a>
+                    </li>
+                    <li>
+                        <a mat-button routerLink="temas">Temas</a>
+                    </li>
+                    <li>
+                        <a mat-button routerLink="matrices">Matrices</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- <button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button> -->
+
+
+        </div>
+
+    </mat-toolbar>
+
+
+
+
+
+</div>

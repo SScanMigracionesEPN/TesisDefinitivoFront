@@ -1,0 +1,63 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  .mat-bar {
+    background-color:rgb(57, 88, 156);
+    color: rgb(255, 255, 255);
+  }
+  
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:hover, a:active{
+    color: lightgray;
+  }
+  
+  .navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 15px 15px;
+    
+  }
+  
+  mat-toolbar {
+    border-radius: 3px;
+  }
+  
+  @media(max-width: 959px){
+    mat-toolbar{
+      border-radius: 0px;
+    }
+  }
+
+  .nav-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+  
+.tool-bar{
+    /* fxLayoutAlign = "end" */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-end;
+}
+
+.targeting-icon{
+    flex-direction: row;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    
+
+
+}
+  
