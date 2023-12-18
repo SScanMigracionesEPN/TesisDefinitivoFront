@@ -1,0 +1,108 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .flex-item-left {
+    background-color: #f1f1f1;
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  .flex-item-right {
+    background-color:  #f1f1f1;
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of a two-column layout */
+  @media (max-width: 800px) {
+    .flex-item-right, .flex-item-left {
+      flex: 100%;
+    }
+    .main {
+        visibility: hidden;
+   }
+  }
+
+.car-details{
+    border: 1px solid #b3c2ca;
+            border-radius: 3px;
+            margin: 0.3em;
+            text-align: center;
+            padding: 2em 0 2.25em 0;
+}
+
+.main {
+    font-size: 75px;
+    color: midnightblue;
+}
+.center {
+    text-align: center;
+  }
+
+  .filter-container {
+    text-align: center;
+}
+.car-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    border-bottom: 1px solid #d9dad9;
+}
+.car-details > div {
+    display: flex;
+    align-items: center;
+}
+.car-details > div img {
+    margin-right: 14px;
+}
+.car-detail {
+    padding: 0 1em 1em 1em;
+    border-bottom: 1px solid #d9dad9;
+    margin: 1em;
+}
+.ui-panel-content {
+    padding: 1em;
+}
+.dark-theme :host ::ng-deep .car-details,
+.dark-theme :host ::ng-deep .car-detail {
+    border-bottom: 1px solid #191919;
+}
+
+@media (max-width: 1024px) {
+    .car-details img {
+         width: 75px;
+    }
+    .filter-container {
+        text-align: left;
+    }
+}
+
+#block_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    
+}

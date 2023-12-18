@@ -5,6 +5,8 @@ import { ActorComponent } from '@pages/strategy/actor/actor.component';
 import { TopicComponent } from '@pages/strategy/topic/topic.component';
 import { MatrixListComponent } from '@pages/strategy/matrix/matrix-list/matrix-list.component';
 import { HomeComponent } from '@pages/strategy/home/home.component';
+import { LoginComponent } from '@pages/auth/login/login.component';
+import { RegisterComponent } from '@pages/auth/register/register.component';
 
 
 
@@ -27,21 +29,23 @@ export const routes: Routes = [
                 component:MatrixListComponent
             },
             {
-                path:'inicio',
+                path:'',
                 component:HomeComponent
             },
+        
         ]
     },
 
     {
-        path:'auth',
-        component:NavPageComponent,
-        children:[
-            {
-                path:'22',
-                component:ActorComponent
-            }
-        ]
+        path:'login',
+        component:LoginComponent,
+        
+    },
+
+    {
+        path:'register',
+        component:RegisterComponent,
+        
     },
 
 

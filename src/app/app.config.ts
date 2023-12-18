@@ -4,8 +4,10 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
 
 
 import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
+import { graphqlProvider } from './graphql.provider';
 
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),provideAnimationsAsync()]
+  providers: [provideRouter(routes),provideAnimationsAsync(), provideHttpClient(), graphqlProvider]
 };

@@ -1,1 +1,29 @@
-<p>login works!</p>
+
+<div class="signin-content">
+    <mat-card>
+      <mat-card-content>
+        <p-messages [value]="msgs"></p-messages>
+        <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
+          <p>Inicio de session</p>
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="Usuario" formControlName="userName" required>
+            <mat-error *ngIf="isFieldInvalid('userName')">
+              Ingrese un usuario valido
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input matInput type="password" placeholder="Password" formControlName="password" required>
+            <mat-error *ngIf="isFieldInvalid('userName')">
+              Ingrese una contraseña valida
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Login</button>
+          
+        </form>
+        <br>
+        <button mat-raised-button color="primary" (click)="crearUser()">Crear Usuario</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
