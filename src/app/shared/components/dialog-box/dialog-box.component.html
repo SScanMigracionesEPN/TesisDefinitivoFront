@@ -1,0 +1,22 @@
+
+<div id="modal" style="width:100%!important;position:relative!important;left:0 !important;  ">
+    <h1 mat-dialog-title><strong>{{action}}</strong></h1>
+    <div mat-dialog-content>
+      <mat-form-field style="width:100%" *ngIf="action != 'Eliminar'; else elseTemplate">
+        <input type="text" class="form-control" required placeholder="Nombre" matInput [(ngModel)]="local_data.name">
+      </mat-form-field>
+      <mat-form-field style="width:100%" *ngIf="action != 'Eliminar';">
+        <input type="number"  required min="1" max="3" placeholder="Prioridad" matInput [(ngModel)]="local_data.prioridad">
+      </mat-form-field>
+      <mat-form-field  style="width:100%" *ngIf="action != 'Eliminar';">
+        <textarea matInput placeholder="Comentario" [(ngModel)]="local_data.coments"></textarea>
+      </mat-form-field>
+      <ng-template style="width:100%" #elseTemplate>
+        Seguro que quiere eliminar a <b>{{local_data.name}}</b>?
+      </ng-template>
+    </div>
+    <div mat-dialog-actions align = "center">
+      <button mat-button [disabled]="!local_data.name  || !local_data.prioridad" (click)="doAction()" mat-flat-button color="primary">{{action}}</button>
+      <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancelar</button>
+    </div>    
+</div>

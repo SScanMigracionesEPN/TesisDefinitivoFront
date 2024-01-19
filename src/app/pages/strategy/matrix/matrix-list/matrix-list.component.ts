@@ -147,7 +147,7 @@ transform1(){
   this.Actores.forEach(actor=>{
     this.Temas.forEach(tema=>{
       delete tema.__typename;
-      delete actor.__typename;
+      // delete actor.__typename;
     });
   });
 }
@@ -157,7 +157,7 @@ celdas(){
   this.ActoresFinal.forEach(actor=>{
     this.TemasFinal.forEach(tema=>{
       delete tema.__typename;
-      delete actor.__typename;
+      // delete actor.__typename;
       let celda = {
         prioridad: 0,
         tiempo: 0,

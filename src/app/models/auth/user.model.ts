@@ -3,3 +3,8 @@ export interface User {
     password: string;
     id: string;
   }
+
+  export interface UsersData {
+    name: string;
+    id: number;
+  }

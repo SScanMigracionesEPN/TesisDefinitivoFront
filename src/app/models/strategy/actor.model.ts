@@ -5,5 +5,5 @@ export interface Actor {
     coments: string;
     parent: Boolean;
     hijos: [Actor];
-    __typename: any;
+    // __typename: any;
   }

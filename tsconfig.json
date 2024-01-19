@@ -32,6 +32,10 @@
       "@pages/*": [
         "./src/app/pages/*"
       ]
+      ,
+      "@gql/*": [
+        "./src/app/gql/*"
+      ]
     },
     "allowSyntheticDefaultImports": true
   },
