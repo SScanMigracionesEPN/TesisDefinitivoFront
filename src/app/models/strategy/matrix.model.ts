@@ -1,15 +1,20 @@
 import { User } from "../auth/user.model";
 import { Actor } from "./actor.model";
 import { Celda } from "./cell.model";
-import { Tema } from "./topic.model";
+import { Topic } from "./topic.model";
 
-export interface Matriz{
+export interface Matrix{
     id: string;
     createdAt?: Date;
     updatedAt?: Date;
     User?: User;
     Actores: Actor[];
-    Temas: Tema[];
+    Temas: Topic[];
     Celdas: Celda[];
 
   }
+
+  export interface MatrixResponseModel {
+    allMatriz: Matrix[];
+  }
+  

@@ -1,4 +1,5 @@
-<!-- 
+<div>
+  <!-- 
 
 <p-toolbar>
     <div class="p-toolbar-group-start">
@@ -17,73 +18,75 @@
     </div>
 </p-toolbar> -->
 
-<div align="right">
-    <p-button label="Nuevo Actor" (click)="openDialog('Crear Padre',{},null)"></p-button>
-    <!-- <button mat-button (click)="openDialog('Crear Padre',{},null)" mat-flat-button color="primary">Nuevo Actor</button>    -->
-</div>
+  <!-- <div align="right">
+    <p-button
+      label="Nuevo Actor"
+      (click)="openDialog('Crear Padre', {}, null)"
+    ></p-button> -->
+  <!-- <button mat-button (click)="openDialog('Crear Padre',{},null)" mat-flat-button color="primary">Nuevo Actor</button>    -->
 
-<p-table
+  <p-table
     [value]="actores"
     [paginator]="true"
     [columns]="columns"
     [rows]="5"
     [showCurrentPageReport]="true"
-    
     [tableStyle]="{ 'min-width': '50rem' }"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [rowsPerPageOptions]="[5, 10, 20]"
->
+  >
     <ng-template pTemplate="header">
-        <tr>
-            <th style="width: 3rem">
-                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-              </th>
-            @for (col of columns; track $index) {
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        @for (col of columns; track $index) {
+        <th style="width: 25%">{{ col.header }}</th>
 
-  
-
-                <th style="width:25%">{{col.header}}</th>
-
-
-
-            }
-
-            
-           
-            
-        </tr>
+        }
+      </tr>
     </ng-template>
     <ng-template pTemplate="body" let-actor>
-        <tr>
-            <td><p-tableCheckbox [value]="actor"></p-tableCheckbox></td>
-            @for (col of columns; track $index) {
-                <th style="width:25%">{{actor[col.field]}}</th>
+      <tr>
+        <td><p-tableCheckbox [value]="actor"></p-tableCheckbox></td>
+        @for (col of columns; track $index) {
+        <th style="width: 25%">{{ actor[col.field] }}</th>
 
-            }
-           <td>
-            <!-- <button mat-icon-button color="primary" (click)="openDialog('Crear',{},data)" *ngIf="data.level == 0 || data.level == 1  || data.level == 2">
+        }
+        <td>
+          <!-- <button mat-icon-button color="primary" (click)="openDialog('Crear',{},data)" *ngIf="data.level == 0 || data.level == 1  || data.level == 2">
                 <mat-icon>person_add</mat-icon>
             </button> -->
-            <button mat-icon-button color="accent" (click)="openDialog('Editar',data,data)">
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button color="warn" (click)="openDialog('Eliminar',data,data)">
-                <mat-icon>delete</mat-icon>
-            </button>
-
-
-           </td>
-            
-            
-        </tr> 
-     </ng-template>
+          <!-- <button
+          mat-icon-button
+          color="accent"
+          (click)="openDialog('Editar', data, data)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button> -->
+          <!-- <button
+          mat-icon-button
+          color="warn"
+          (click)="openDialog('Eliminar', data, data)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button> -->
+        </td>
+      </tr>
+    </ng-template>
     <ng-template pTemplate="paginatorleft">
-        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+      <p-button
+        type="button"
+        icon="pi pi-plus"
+        styleClass="p-button-text"
+      ></p-button>
     </ng-template>
     <ng-template pTemplate="paginatorright">
-        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+      <p-button
+        type="button"
+        icon="pi pi-cloud"
+        styleClass="p-button-text"
+      ></p-button>
     </ng-template>
-</p-table>
-
-
-
+  </p-table>
+</div>

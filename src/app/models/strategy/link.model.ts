@@ -4,3 +4,8 @@ export interface Link {
     url: string;
     createdAt: string;
   }
+  
+  export interface LinkResponseModel {
+    allLinks: Link[];
+  }
+  

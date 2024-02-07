@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ActorHttpService } from './actor-http.service';
+import { MatrixHttpService } from '../matrix-http.service';
 
-describe('ActorHttpService', () => {
-  let service: ActorHttpService;
+describe('MatrixHttpService', () => {
+  let service: MatrixHttpService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ActorHttpService);
+    service = TestBed.inject(MatrixHttpService);
   });
 
   it('should be created', () => {

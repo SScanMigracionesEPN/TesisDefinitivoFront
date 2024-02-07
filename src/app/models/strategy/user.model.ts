@@ -3,3 +3,7 @@ export interface User{
     name: string;
   }
 
+  export interface UserResponseModel {
+    allUsers: User[];
+  }
+  

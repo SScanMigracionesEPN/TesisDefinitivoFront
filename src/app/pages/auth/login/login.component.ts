@@ -10,6 +10,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MessagesModule } from 'primeng/messages';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { Apollo } from 'apollo-angular';
+import { ALL_USERS, FIND_ONE_USER } from '@gql/auth/user.gql';
 
 
 
@@ -34,7 +36,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    // private apollo: Apollo
+    private apollo: Apollo
   ) {
 
 
@@ -55,12 +57,6 @@ export class LoginComponent {
     });
   }
 
-  isFieldInvalid(field: string) {
-    // return (
-    //   (!this.form.get(field).valid && this.form.get(field).touched) ||
-    //   (this.form.get(field).untouched && this.formSubmitAttempt)
-    // );
-  }
 
   onSubmit() {
 
@@ -72,22 +68,27 @@ export class LoginComponent {
   
   }
   create(){
-    // this.apollo.watchQuery({
-    //   query: GET_USER,
-    //   variables: {
-    //     name: this.form.value.userName
-    //   }
-    // }).valueChanges.subscribe((response) => {
-    //   this.Users = response.data['users'];
-    //   if(Object.keys(this.Users).length === 0){
-    //     this.msgs = [{severity:'info', summary:'Rechazado', detail:'Credenciales Incorrectos'}];
-    //   }else{
-    //     this.authService.login(this.Users);
-    //   }
-    //  });
+    this.apollo.watchQuery({
+      query: FIND_ONE_USER,
+      variables: {
+        name: this.form.value.userName
+      }
+    }).valueChanges.subscribe((response : any) => {
+      this.Users = response.data['users'];
+      if(Object.keys(this.Users).length === 0){
+        this.msgs = [{severity:'info', summary:'Rechazado', detail:'Credenciales Incorrectos'}];
+      }else{
+        this.authService.login(this.Users);
+      }
+     });
 
 
   }
+
+  isFieldInvalid(validation: string){
+
+  }
+
 
   crearUser(){
     this.router.navigate(['register']);
