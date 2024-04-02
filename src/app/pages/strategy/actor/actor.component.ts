@@ -41,15 +41,29 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './actor.component.css',
 })
 export class ActorComponent {
-  actores: Actor[] = [];
+  actores: Actor[] = [
+    {
+      coments: "CEO de Facebook",
+      hijos: [],
+      id: 1,
+      name: "Mark Zuckerberg",
+      parent: true,
+      prioridad: 2
+    },
+
+  ];
   columns: ColumnModel[];
   actors!: Actor[];
   action: string = '';
   local_data: any;
 
+
+
+
   constructor(
     // private dialogRef: MatDialogRef<DialogBoxComponent>,
     private actorsHttpService: ActorHttpService,
+    public dialog: MatDialog
   ) {
     this.columns = this.getColumns();
     // this.local_data = { ...data };
@@ -77,5 +91,22 @@ export class ActorComponent {
   }
 
 
+  openDialog(action: any,obj : any) {
+    obj.action = action;
+    const dialogRef = this.dialog.open(DialogBoxComponent, {
+      width: '25%',
+      data:obj
+    });
+ 
+    dialogRef.afterClosed().subscribe(result => {
+      // if(result.event == 'Add'){
+      //   this.addRowData(result.data);
+      // }else if(result.event == 'Update'){
+      //   this.updateRowData(result.data);
+      // }else if(result.event == 'Delete'){
+      //   this.deleteRowData(result.data);
+      // }
+    });
+  }
 
 }

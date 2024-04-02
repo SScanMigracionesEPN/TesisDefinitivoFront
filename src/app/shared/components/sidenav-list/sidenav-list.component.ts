@@ -6,20 +6,15 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../../../services/authentication/auth.service';
 import { MatListModule } from '@angular/material/list';
 
-
-
 @Component({
   selector: 'app-sidenav-list',
   standalone: true,
-  imports: [CommonModule,MatListModule ],
+  imports: [CommonModule, MatListModule],
   templateUrl: './sidenav-list.component.html',
   styleUrl: './sidenav-list.component.css',
-  providers:[ConfirmationService]
-  
-  
+  providers: [ConfirmationService],
 })
 export class SidenavListComponent implements OnInit {
-
   @Output() sidenavClose = new EventEmitter();
 
   isLoggedIn$: Observable<boolean>;
@@ -32,17 +27,33 @@ export class SidenavListComponent implements OnInit {
     this.isLoggedIn$ = this.authService.isLoggedIn;
   }
 
-
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   onLogout() {
     this.authService.logout();
   }
 
-  public onSidenavClose = () => {
+  redirectToActors() {
+    this.router.navigate(['actores']);
     this.sidenavClose.emit();
   }
+
+
+  redirectToHome() {
+    this.router.navigate(['']);
+    this.sidenavClose.emit();
+  }
+
+  redirectToTopics() {
+    this.router.navigate(['temas']);
+    this.sidenavClose.emit();
+  }
+
+  
+  redirectToMatrixs() {
+    this.router.navigate(['temas']);
+    this.sidenavClose.emit();
+  }
+
 
 }

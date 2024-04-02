@@ -1,6 +1,6 @@
 
 export interface Topic {
-    id: string;
+    id: number;
     name: string;
     prioridad: number;
     coments: string;

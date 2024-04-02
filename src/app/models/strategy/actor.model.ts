@@ -1,10 +1,10 @@
 export interface Actor {
-  id: string;
+  id: number;
   name: string;
   prioridad: number;
   coments: string;
   parent: Boolean;
-  hijos: [Actor];
+  hijos: Actor[];
   // __typename: any;
 }
 

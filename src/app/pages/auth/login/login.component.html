@@ -4,7 +4,7 @@
       <mat-card-content>
         <p-messages [value]="msgs"></p-messages>
         <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
-          <p>Inicio de session</p>
+          <p>Inicio de sesion</p>
           <mat-form-field class="full-width-input">
             <input matInput placeholder="Usuario" formControlName="userName" required>
             <mat-error *ngIf="isFieldInvalid('userName')">

@@ -20,6 +20,7 @@
     "lib": ["ES2022", "dom", "esnext.asynciterable"],
     "paths": {
       "@shared/*": ["./src/app/shared/*"],
+      "@services/*": ["./src/app/services/*"],
       "@layout": ["./src/app/layouts"],
       "@models/*": ["./src/app/models/*"],
       "@pages/*": ["./src/app/pages/*"],

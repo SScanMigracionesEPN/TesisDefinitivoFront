@@ -1,8 +1,8 @@
-import { Tema } from "./topic.model";
+import { Topic } from "./topic.model";
 
 export interface Celda{
     id: string;
-    TemaParent: Tema; 
+    TemaParent: Topic; 
     CeldaParent: Celda;
     prioridad: number;
     tiempo: number;

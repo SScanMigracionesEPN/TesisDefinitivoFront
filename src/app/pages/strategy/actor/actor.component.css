@@ -1,0 +1,23 @@
+.layout{
+    display: flex;
+    /* flex-wrap: wrap; */
+    font-size: 30px;
+    align-items: start;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.create{
+    display: flex;
+
+
+}
+
+.table{
+    width: 100%;
+    min-width: 100%;
+}

@@ -1,4 +1,4 @@
-<div>
+<div class="layout">
   <!-- 
 
 <p-toolbar>
@@ -25,16 +25,21 @@
     ></p-button> -->
   <!-- <button mat-button (click)="openDialog('Crear Padre',{},null)" mat-flat-button color="primary">Nuevo Actor</button>    -->
 
+  <div>
+    <button mat-raised-button color="primary" (click)="openDialog('Add',{})">Crear Actores</button>
+  </div>
   <p-table
+  class="table"
     [value]="actores"
     [paginator]="true"
     [columns]="columns"
     [rows]="5"
     [showCurrentPageReport]="true"
-    [tableStyle]="{ 'min-width': '50rem' }"
+    [tableStyle]="{ 'min-width': '1175px' }"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [rowsPerPageOptions]="[5, 10, 20]"
-  >
+    
+    >
     <ng-template pTemplate="header">
       <tr>
         <th style="width: 3rem">
@@ -54,23 +59,21 @@
 
         }
         <td>
-          <!-- <button mat-icon-button color="primary" (click)="openDialog('Crear',{},data)" *ngIf="data.level == 0 || data.level == 1  || data.level == 2">
+          <button mat-icon-button color="primary">
                 <mat-icon>person_add</mat-icon>
-            </button> -->
-          <!-- <button
+            </button>
+          <button
           mat-icon-button
           color="accent"
-          (click)="openDialog('Editar', data, data)"
         >
           <mat-icon>edit</mat-icon>
-        </button> -->
-          <!-- <button
+        </button>
+          <button
           mat-icon-button
           color="warn"
-          (click)="openDialog('Eliminar', data, data)"
         >
           <mat-icon>delete</mat-icon>
-        </button> -->
+        </button>
         </td>
       </tr>
     </ng-template>

@@ -8,8 +8,6 @@ import {
 } from '@gql/strategy';
 import { Apollo, MutationResult } from 'apollo-angular';
 import { Observable, map } from 'rxjs';
-import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
-import { Nullable } from 'primeng/ts-helpers';
 import { Actor, ActorResponseModel } from '@models/strategy';
 
 @Injectable({

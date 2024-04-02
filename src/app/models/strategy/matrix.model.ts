@@ -4,7 +4,7 @@ import { Celda } from "./cell.model";
 import { Topic } from "./topic.model";
 
 export interface Matrix{
-    id: string;
+    id: number;
     createdAt?: Date;
     updatedAt?: Date;
     User?: User;
