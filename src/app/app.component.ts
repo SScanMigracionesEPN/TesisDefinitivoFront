@@ -12,6 +12,7 @@ import { InMemoryCache } from '@apollo/client/core';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ToastService } from '@services/core/toast.service';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   ],
   providers: [
    MessageService,
+   ToastService
   ],
   templateUrl: './app.component.html',
 
