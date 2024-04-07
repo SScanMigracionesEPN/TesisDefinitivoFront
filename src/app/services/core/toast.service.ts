@@ -10,16 +10,16 @@ export class ToastService {
 
   constructor(
     private router: Router,
-    private messageService: MessageService 
+    // private messageService: MessageService 
     ) { }
 
   serverDisconected(){
-    this.messageService.add({
-      severity: MessageServerity.ERROR,
-      summary: 'Error de conexion',
-      detail: "No se pudo establecer conexion con el servidor"
+    // this.messageService.add({
+    //   severity: MessageServerity.ERROR,
+    //   summary: 'Error de conexion',
+    //   detail: "No se pudo establecer conexion con el servidor"
 
-    });
+    // });
   }
   
   redirectTo(): string {

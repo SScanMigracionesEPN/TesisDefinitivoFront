@@ -13,6 +13,16 @@ export function successMessage(
   };
 }
 
+
+export function convertSingleError(title: string, description: string ) {
+  return {
+    severity: MessageServerity.ERROR,
+    summary: title,
+    detail: description,
+  };
+}
+
+
 export function convertError(error: GraphQLError) {
   return {
     severity: MessageServerity.ERROR,

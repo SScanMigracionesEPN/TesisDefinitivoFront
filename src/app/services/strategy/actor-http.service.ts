@@ -58,14 +58,14 @@ export class ActorHttpService {
     });
   }
 
-  remove(id: number): void {
-    this.apollo.mutate<Actor>({
+  remove(id: number): Observable<MutationResult<Actor>> {
+    return this.apollo.mutate<Actor>({
       mutation: REMOVE_ACTOR,
       variables: {
         id,
       },
       errorPolicy: 'all',
-    });
+    })
   }
 
   //Los services se hacen a partir de la carpeta de query gql

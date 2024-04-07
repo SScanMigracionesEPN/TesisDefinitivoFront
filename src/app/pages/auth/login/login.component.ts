@@ -16,10 +16,8 @@ import { MessagesModule } from 'primeng/messages';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { Apollo } from 'apollo-angular';
-import { ALL_USERS, FIND_NAME_USER, FIND_ONE_USER } from '@gql/auth/user.gql';
 import { AuthHttpService } from '@services/authentication/auth-http.service';
 import { convertAllErrors } from '@shared/utils/messages.util';
-import { ToastService } from '@services/core/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -49,7 +47,7 @@ export class LoginComponent {
     private router: Router,
     private apollo: Apollo,
     private messageService: MessageService,
-    private toastService: ToastService
+    // private toastService: ToastService
   ) {}
 
   ngOnInit() {
@@ -67,7 +65,7 @@ export class LoginComponent {
   onSubmit() {
     if (this.form.valid) {
       this.login()
-      this.toastService.serverDisconected();  
+      // this.toastService.serverDisconected();  
     }
   }
   login() {
@@ -80,8 +78,7 @@ export class LoginComponent {
           this.authService.login(response.data.findByName);
         }
       }
-    )
-
+    );
   }
 
   isFieldInvalid(validation: string) {}
