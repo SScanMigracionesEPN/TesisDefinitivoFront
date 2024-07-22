@@ -1,1 +1,96 @@
-<p>topic works!</p>
+<div class="layout">
+    <!-- 
+  
+  <p-toolbar>
+      <div class="p-toolbar-group-start">
+          <button pButton icon="pi pi-plus" class="mr-2"></button>
+          <button pButton icon="pi pi-print" class="mr-2"></button>
+          <button pButton icon="pi pi-upload"></button>
+      </div>
+      <div class="p-toolbar-group-center">
+          <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input pInputText placeholder="Search" />
+          </span>
+      </div>
+      <div class="p-toolbar-group-end">
+          <p-splitButton label="Save" icon="pi pi-check" [model]="items"></p-splitButton>
+      </div>
+  </p-toolbar> -->
+  
+    <!-- <div align="right">
+      <p-button
+        label="Nuevo Actor"
+        (click)="openDialog('Crear Padre', {}, null)"
+      ></p-button> -->
+    <!-- <button mat-button (click)="openDialog('Crear Padre',{},null)" mat-flat-button color="primary">Nuevo Actor</button>    -->
+  
+    <div>
+      <button mat-raised-button color="primary" (click)="openDialog('Add',{})" >Crear Temas</button>
+    </div>
+    <p-table
+    class="table"
+      [value]="actores"
+      [paginator]="true"
+      [columns]="columns"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '1175px' }"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[5, 10, 20]"
+      
+      >
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 3rem">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+          @for (col of columns; track $index) {
+          <th style="width: 25%">{{ col.header }}</th>
+  
+          }
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-actor>
+        <tr>
+          <td><p-tableCheckbox [value]="actor"></p-tableCheckbox></td>
+          @for (col of columns; track $index) {
+          <th style="width: 25%">{{ actor[col.field] }}</th>
+  
+          }
+          <td>
+            <button mat-icon-button color="primary">
+                  <mat-icon>person_add</mat-icon>
+              </button>
+            <button
+            mat-icon-button
+            color="accent"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+            <button
+            mat-icon-button
+            color="warn"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+        <p-button
+          type="button"
+          icon="pi pi-plus"
+          styleClass="p-button-text"
+        ></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+        <p-button
+          type="button"
+          icon="pi pi-cloud"
+          styleClass="p-button-text"
+        ></p-button>
+      </ng-template>
+    </p-table>
+  </div>
+  

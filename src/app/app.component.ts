@@ -1,31 +1,28 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { APOLLO_NAMED_OPTIONS, ApolloModule, NamedOptions } from 'apollo-angular';
-import { HttpLink } from 'apollo-angular/http';
+import { ApolloModule } from 'apollo-angular';
 import { HttpClientModule } from '@angular/common/http';
-import { InMemoryCache } from '@apollo/client/core';
-
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,ApolloModule,HttpClientModule],
-  providers:[{
-    provide: APOLLO_NAMED_OPTIONS,
-    useFactory(httpLink: HttpLink) {
-      return {
-        cache: new InMemoryCache(),
-        link: httpLink.create({
-          uri: 'http://localhost:3000',
-        }),
-      };
-    },
-    deps: [HttpLink],
-  },],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    ApolloModule,
+    HttpClientModule,
+    ToastModule,
+  ],
+  providers: [
+    MessageService,
+    //  ToastService
+  ],
   templateUrl: './app.component.html',
 
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'Tesis1definitivoFrontAngular';

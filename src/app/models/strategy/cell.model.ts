@@ -1,12 +1,15 @@
-import { Actor } from "./actor.model";
-import { Tema } from "./topic.model";
+import { Topic } from "./topic.model";
 
 export interface Celda{
     id: string;
-    TemaParent: Tema; 
-    ActorParent: Actor;
+    TemaParent: Topic; 
+    CeldaParent: Celda;
     prioridad: number;
     tiempo: number;
     coment: string;
   }
 
+  export interface CeldaResponseModel {
+    allCeldas: Celda[];
+  }
+  

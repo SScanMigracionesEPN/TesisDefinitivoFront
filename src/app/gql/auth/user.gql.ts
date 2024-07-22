@@ -50,6 +50,14 @@ query FindUser($id:Int!){
     }    
   }
 `;
+export const FIND_NAME_USER = gql`
+query FindUserByName($username:String!){
+    findByName(username:$username)
+    {
+      name
+    }    
+  }
+`;
 
 
 

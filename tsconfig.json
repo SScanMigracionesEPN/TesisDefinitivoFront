@@ -17,25 +17,14 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom",
-      "esnext.asynciterable"
-    ],
+    "lib": ["ES2022", "dom", "esnext.asynciterable"],
     "paths": {
-      "@shared/*": [
-        "./src/app/shared/*"
-      ],
-      "@layout": [
-        "./src/app/layouts"
-      ],
-      "@pages/*": [
-        "./src/app/pages/*"
-      ]
-      ,
-      "@gql/*": [
-        "./src/app/gql/*"
-      ]
+      "@shared/*": ["./src/app/shared/*"],
+      "@services/*": ["./src/app/services/*"],
+      "@layout": ["./src/app/layouts"],
+      "@models/*": ["./src/app/models/*"],
+      "@pages/*": ["./src/app/pages/*"],
+      "@gql/*": ["./src/app/gql/*"]
     },
     "allowSyntheticDefaultImports": true
   },

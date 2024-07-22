@@ -38,6 +38,7 @@ subscription {
     project{
      id
      name
+     description
    }  
    }
 `;

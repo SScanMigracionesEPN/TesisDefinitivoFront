@@ -7,50 +7,48 @@ import { MatrixListComponent } from '@pages/strategy/matrix/matrix-list/matrix-l
 import { HomeComponent } from '@pages/strategy/home/home.component';
 import { LoginComponent } from '@pages/auth/login/login.component';
 import { RegisterComponent } from '@pages/auth/register/register.component';
-
-
-
+import { ProjectListComponent } from '@pages/strategy/project/project-list/project-list.component';
 
 export const routes: Routes = [
-    {
-        path:'',
-        component:NavPageComponent,
-        children:[
-            {
-                path:'actores',
-                component:ActorComponent
-            },
-            {
-                path:'temas',
-                component:TopicComponent
-            },
-            {
-                path:'matrices',
-                component:MatrixListComponent
-            },
-            {
-                path:'',
-                component:HomeComponent
-            },
-        
-        ]
-    },
+  {
+    path: '',
+    component: NavPageComponent,
+    children: [
+      {
+        path: 'proyectos',
+        component: ProjectListComponent,
+      },
+      {
+        path: 'actores',
+        component: ActorComponent,
+      },
+      {
+        path: 'temas',
+        component: TopicComponent,
+      },
+      {
+        path: 'matrices',
+        component: MatrixListComponent,
+      },
+      {
+        path: '',
+        component: HomeComponent,
+      },
+    ],
+  },
 
-    {
-        path:'login',
-        component:LoginComponent,
-        
-    },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
 
-    {
-        path:'register',
-        component:RegisterComponent,
-        
-    },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
 
-
-   {
-     path:'**',
-     redirectTo:'/login'
-   }
+  {
+    path: '**',
+    redirectTo: '/login',
+  },
 ];

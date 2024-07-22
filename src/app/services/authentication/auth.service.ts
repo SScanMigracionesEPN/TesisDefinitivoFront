@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '@models/strategy';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '../../models/auth/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +20,8 @@ export class AuthService {
     // private apollo: Apollo
   ) {}
 
-  login(user: User[]) {
-      this.Users = user;
-      localStorage.setItem("Usuario", JSON.stringify(this.Users[0]));
+  login(user: User) {
+      localStorage.setItem("Usuario", JSON.stringify(user));
       this.loggedIn.next(true);
       this.router.navigate(['/']);
   }

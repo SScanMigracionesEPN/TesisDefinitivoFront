@@ -1,12 +1,16 @@
 
-export interface Tema {
-    id: string;
+export interface Topic {
+    id: number;
     name: string;
     prioridad: number;
     coments: string;
     parent: Boolean;
-    hijos: [Tema];
+    hijos: Topic[];
     __typename: any;
   }
 
+  export interface TopicResponseModel {
+    allTopics: Topic[];
+  }
+  
   
