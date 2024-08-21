@@ -2,33 +2,41 @@ import { gql } from 'apollo-angular';
 
 export const ALL_TOPICS = gql`
   query {
-    allTopics {
+    allTemas {
       id
       name
+      prioridad
+      coments
     }
   }
 `;
 
 export const CREATE_TOPIC = gql`
-mutation TopicCreate($topic:CreateTopic!){
-    createTopic(data:$topic){
+mutation TemaCreate($topic:CreateTema!){
+    createTema(data:$topic){
       name
+      prioridad
+      coments
     }
   }
 `;
 
 export const UPDATE_TOPIC = gql`
-mutation TopicUpdate($topic:UniqueTopic!){
-    updateTopic(updateTopicInput:$topic){
+mutation TemaUpdate($topic:UniqueTema!){
+    updateTema(updateTemaInput:$topic){
       name
+      prioridad
+      coments
     }
   }
 `;
 
 export const REMOVE_TOPIC = gql`
-mutation TopicRemove($id:Int!){
-    removeTopic(id:$id){
+mutation TemaRemove($id:Int!){
+    removeTema(id:$id){
       name
+      prioridad
+      coments
     }
   }
 `;
@@ -38,15 +46,19 @@ subscription {
     topic{
      id
      name
+     prioridad
+     coments
    }  
    }
 `;
 
 export const FIND_ONE_TOPIC = gql`
-query FindTopic($id:Int!){
+query FindTema($id:Int!){
     topic(id:$id)
     {
       name
+      prioridad
+      coments
     }    
   }
 `;

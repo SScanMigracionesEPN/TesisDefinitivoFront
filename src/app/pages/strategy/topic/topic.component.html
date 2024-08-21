@@ -30,7 +30,7 @@
     </div>
     <p-table
     class="table"
-      [value]="actores"
+      [value]="temas"
       [paginator]="true"
       [columns]="columns"
       [rows]="5"
@@ -71,6 +71,7 @@
             <button
             mat-icon-button
             color="warn"
+            (click)="openDialog('Delete',{id: actor.id, name: actor.name})"
           >
             <mat-icon>delete</mat-icon>
           </button>

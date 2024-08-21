@@ -10,7 +10,7 @@ export interface Topic {
   }
 
   export interface TopicResponseModel {
-    allTopics: Topic[];
+    allTemas: Topic[];
   }
   
   

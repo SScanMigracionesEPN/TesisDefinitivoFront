@@ -65,16 +65,7 @@ import { DialogFlow } from '@shared/enums/dialogFlow.enum';
   styleUrl: './actor.component.css',
 })
 export class ActorComponent {
-  actores: Actor[] = [
-    {
-      coments: 'CEO de Facebook',
-      hijos: [],
-      id: 1,
-      name: 'Mark Zuckerberg',
-      parent: true,
-      prioridad: 2,
-    },
-  ];
+  actores: Actor[] = [];
   columns: ColumnModel[];
   actors!: Actor[];
   action: string = '';
@@ -131,16 +122,17 @@ export class ActorComponent {
       width: '25%',
       data: obj,
     });
+    
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.obtainDialogFlow(result.event);
+      this.obtainDialogFlow(result.event, result.data);
     });
   }
 
-  private obtainDialogFlow(name: DialogFlow) {
+  private obtainDialogFlow(name: DialogFlow, data: any) {
     switch (name) {
       case DialogFlow.ADD:
-        this.create();
+        this.create(data);
         break;
       case DialogFlow.UPDATE:
         this.update();
@@ -160,7 +152,11 @@ export class ActorComponent {
     }
   }
 
-  private create() {
+  private create(data: any) {
+    console.log(data);
+    this.form.value.name = data.name;
+    this.form.value.prioridad = data.prioridad;
+    this.form.value.coments = data.coments;
     this.form.value.parent = false;
     this.actorHttpService.create(this.form.value).subscribe((response) => {
 
@@ -174,6 +170,7 @@ export class ActorComponent {
           summary: CREATED,
           detail: messageBuilder(this.title, CREATED.toLowerCase()),
         });
+        this.findAll();
       }
     });
   }
@@ -211,6 +208,7 @@ export class ActorComponent {
           detail: messageBuilder(this.title, DELETED.toLowerCase()),
         });
         this.actores = this.actores.filter((actor) => actor.id != response.data?.id);
+        this.findAll();
       }
     });
   }
